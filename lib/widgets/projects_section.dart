@@ -23,7 +23,7 @@ class ProjectsSection extends StatelessWidget {
       {
         'title': 'Bookly',
         'desc':
-            'Bookly is an app that allows the user to view free e-books received from an API. It shows the book\’s cover image, name, author(s) and enables the user to view the book in his browser, it also has a search service so the user can search for books of any category desired.',
+            'Bookly is an app that allows the user to view free e-books received from an API. It shows the book’s cover image, name, author(s) and enables the user to view the book in his browser, it also has a search service so the user can search for books of any category desired.',
         'tags': ['Flutter', 'REST API', 'Bloc'],
         'url': 'https://github.com/Baseljamal/Bookly',
         'screenshots': [
