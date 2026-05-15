@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../core/widgets/responsive_wrapper.dart';
+import '../widgets/mobile_frame.dart';
 
 class ProjectDetailsScreen extends StatelessWidget {
   final String title;
@@ -23,24 +24,55 @@ class ProjectDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-        ),
-        body: SingleChildScrollView(
-          child: ResponsiveWrapper(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 32.0,
-                vertical: 24.0,
+        body: Stack(
+          children: [
+            Positioned(
+              top: -150,
+              left: -150,
+              child: Container(
+                width: 400,
+                height: 400,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF7000FF).withValues(alpha: 0.15),
+                      blurRadius: 200,
+                      spreadRadius: 50,
+                    ),
+                  ],
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            ),
+            Positioned(
+              bottom: -100,
+              right: -100,
+              child: Container(
+                width: 400,
+                height: 400,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF00F0FF).withValues(alpha: 0.1),
+                      blurRadius: 200,
+                      spreadRadius: 50,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SingleChildScrollView(
+              child: ResponsiveWrapper(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 32.0,
+                    vertical: 24.0,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 60), // Space for back button
                   Text(
                     title,
                     style: const TextStyle(
@@ -111,25 +143,17 @@ class ProjectDetailsScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     SizedBox(
-                      height: 400,
+                      height: 420,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemCount: screenshots.length,
                         separatorBuilder: (context, index) =>
                             const SizedBox(width: 24),
                         itemBuilder: (context, index) {
-                          return Container(
-                            width: 250,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.surface,
-                              borderRadius: BorderRadius.circular(16),
-                              border: Border.all(
-                                color: Colors.white.withValues(alpha: 0.05),
-                              ),
-                              image: DecorationImage(
-                                image: NetworkImage(screenshots[index]),
-                                fit: BoxFit.cover,
-                              ),
+                          return MobileFrame(
+                            child: Image.network(
+                              screenshots[index],
+                              fit: BoxFit.cover,
                             ),
                           );
                         },
@@ -165,10 +189,21 @@ class ProjectDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 60),
-                ],
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
+            // Back Button
+            Positioned(
+              top: 20,
+              left: 20,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ),
+          ],
         ),
       ),
     );

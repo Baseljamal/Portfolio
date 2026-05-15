@@ -10,47 +10,47 @@ class ProjectsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final projects = [
       {
-        'title': 'AI Image Classifier',
-        'desc':
-            'A mobile application utilizing TensorFlow Lite models for real-time image classification and object detection. Built entirely in Flutter with custom native channels.',
-        'tags': ['Flutter', 'TensorFlow', 'Python'],
-        'url': 'https://github.com/baseldev/flutter-ai-classifier',
-        'screenshots': [
-          'https://placehold.co/600x400/png?text=AI+Classifier+1',
-          'https://placehold.co/600x400/png?text=AI+Classifier+2',
-        ],
-      },
-      {
-        'title': 'Omega E-Commerce',
+        'title': 'Omega Store',
         'desc':
             'A full-stack e-commerce solution featuring Firebase authentication, dynamic cart management, and real-time order tracking using Bloc architecture.',
-        'tags': ['Flutter', 'Firebase', 'Bloc', 'Stripe'],
-        'url': 'https://github.com/baseldev/flutter-ecommerce',
+        'tags': ['Flutter', 'Firebase', 'Bloc'],
+        'url': 'https://github.com/Baseljamal/Omega_Store',
         'screenshots': [
           'https://placehold.co/600x400/png?text=Omega+Store+1',
           'https://placehold.co/600x400/png?text=Omega+Store+2',
         ],
       },
       {
-        'title': 'Runner Game Engine',
+        'title': 'Bookly',
         'desc':
-            'A 2D infinite runner game developed using the Flame engine. Features custom sprite animations, parallax backgrounds, and complex collision detection.',
-        'tags': ['Flutter', 'Flame', 'Game Dev'],
-        'url': 'https://github.com/baseldev/runner-game',
+            'Bookly is an app that allows the user to view free e-books received from an API. It shows the book\’s cover image, name, author(s) and enables the user to view the book in his browser, it also has a search service so the user can search for books of any category desired.',
+        'tags': ['Flutter', 'REST API', 'Bloc'],
+        'url': 'https://github.com/Baseljamal/Bookly',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Runner+Game+1',
-          'https://placehold.co/600x400/png?text=Runner+Game+2',
+          'https://placehold.co/600x400/png?text=Omega+Store+1',
+          'https://placehold.co/600x400/png?text=Omega+Store+2',
         ],
       },
       {
-        'title': 'Crypto Portfolio',
+        'title': 'Notes App',
         'desc':
-            'Real-time cryptocurrency portfolio tracker integrating multiple REST and WebSocket APIs. Includes interactive charts and price alerts.',
-        'tags': ['Flutter', 'WebSockets', 'REST APIs'],
-        'url': 'https://github.com/baseldev/crypto-tracker',
+            'An app where the user can create notes that are stored in a local database using Hive, with Cubit for state management. The user can add a title, content, and background color to their notes, and has the ability to edit each element or delete the note.',
+        'tags': ['Flutter', 'Hive', 'Cubit'],
+        'url': 'https://github.com/Baseljamal/notes_app',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Crypto+1',
-          'https://placehold.co/600x400/png?text=Crypto+2',
+          'https://placehold.co/600x400/png?text=Notes+App+1',
+          'https://placehold.co/600x400/png?text=Notes+App+2',
+        ],
+      },
+      {
+        'title': 'Neon Runner',
+        'desc':
+            'Neon Runner is a visually immersive 2D endless runner game built with Flutter and the Flame game engine, where the player has to avoid obstacles by jumping or double jumping. And it has local high-score calculation and dynamic difficulty scaling.',
+        'tags': ['Flutter', 'Flame'],
+        'url': 'https://github.com/Baseljamal/Neon_Runner_Game',
+        'screenshots': [
+          'https://placehold.co/600x400/png?text=Neon+Runner+1',
+          'https://placehold.co/600x400/png?text=Neon+Runner+2',
         ],
       },
     ];
@@ -66,26 +66,30 @@ class ProjectsSection extends StatelessWidget {
         LayoutBuilder(
           builder: (context, constraints) {
             int crossAxisCount = constraints.maxWidth > 800 ? 2 : 1;
-            return GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: crossAxisCount,
-                crossAxisSpacing: 24,
-                mainAxisSpacing: 24,
-                childAspectRatio: constraints.maxWidth > 800 ? 1.4 : 1.2,
-              ),
-              itemCount: projects.length,
-              itemBuilder: (context, index) {
+            return Wrap(
+              spacing: 24,
+              runSpacing: 24,
+              children: List.generate(projects.length, (index) {
                 final p = projects[index];
-                return ProjectCard(
-                  title: p['title'] as String,
-                  description: p['desc'] as String,
-                  tags: p['tags'] as List<String>,
-                  githubUrl: p['url'] as String,
-                  screenshots: (p['screenshots'] as List<String>?) ?? [],
-                ).animate().fadeIn(delay: (200 * index).ms).slideY(begin: 0.1);
-              },
+                final width = crossAxisCount == 1
+                    ? constraints.maxWidth
+                    : (constraints.maxWidth - 24) / 2;
+                return SizedBox(
+                  width: width,
+                  child:
+                      ProjectCard(
+                            title: p['title'] as String,
+                            description: p['desc'] as String,
+                            tags: p['tags'] as List<String>,
+                            githubUrl: p['url'] as String,
+                            screenshots:
+                                (p['screenshots'] as List<String>?) ?? [],
+                          )
+                          .animate()
+                          .fadeIn(delay: (200 * index).ms)
+                          .slideY(begin: 0.1),
+                );
+              }),
             );
           },
         ),

@@ -82,14 +82,14 @@ class ProjectCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Expanded(
-                  child: Text(
-                    description,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey.shade400,
-                      height: 1.5,
-                    ),
+                Text(
+                  description,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade400,
+                    height: 1.5,
                   ),
                 ),
                 const SizedBox(height: 24),
