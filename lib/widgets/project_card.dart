@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/screens/project_details_screen.dart';
 
 class ProjectCard extends StatelessWidget {
   final String title;
   final String description;
   final List<String> tags;
   final String githubUrl;
+  final List<String> screenshots;
 
   const ProjectCard({
     super.key,
@@ -14,6 +15,7 @@ class ProjectCard extends StatelessWidget {
     required this.description,
     required this.tags,
     required this.githubUrl,
+    this.screenshots = const [],
   });
 
   @override
@@ -28,7 +30,19 @@ class ProjectCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(24),
-          onTap: () => launchUrl(Uri.parse(githubUrl)),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ProjectDetailsScreen(
+                  title: title,
+                  description: description,
+                  tags: tags,
+                  githubUrl: githubUrl,
+                  screenshots: screenshots,
+                ),
+              ),
+            );
+          },
           hoverColor: Colors.white.withValues(alpha: 0.02),
           child: Padding(
             padding: const EdgeInsets.all(32.0),
@@ -41,7 +55,9 @@ class ProjectCard extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                        color: Theme.of(
+                          context,
+                        ).primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: FaIcon(

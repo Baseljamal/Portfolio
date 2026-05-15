@@ -29,6 +29,13 @@ class Footer extends StatelessWidget {
                 color: Colors.grey.shade400,
                 hoverColor: Colors.white,
               ),
+              IconButton(
+                onPressed: () =>
+                    launchUrl(Uri.parse('mailto:baselabdulla7@gmail.com')),
+                icon: FaIcon(FontAwesomeIcons.envelope),
+                color: Colors.grey.shade400,
+                hoverColor: Colors.white,
+              ),
             ],
           ),
           const SizedBox(height: 16),

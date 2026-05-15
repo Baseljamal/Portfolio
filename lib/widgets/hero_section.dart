@@ -104,7 +104,7 @@ class HeroSection extends StatelessWidget {
                   FaIcon(FontAwesomeIcons.github, size: 20),
                   SizedBox(width: 12),
                   Text(
-                    'View GitHub',
+                    'GitHub',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -116,6 +116,7 @@ class HeroSection extends StatelessWidget {
               ),
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
+                backgroundColor: Colors.blue[800],
                 side: BorderSide(color: Colors.grey.shade700),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,

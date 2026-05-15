@@ -15,6 +15,10 @@ class ProjectsSection extends StatelessWidget {
             'A mobile application utilizing TensorFlow Lite models for real-time image classification and object detection. Built entirely in Flutter with custom native channels.',
         'tags': ['Flutter', 'TensorFlow', 'Python'],
         'url': 'https://github.com/baseldev/flutter-ai-classifier',
+        'screenshots': [
+          'https://placehold.co/600x400/png?text=AI+Classifier+1',
+          'https://placehold.co/600x400/png?text=AI+Classifier+2',
+        ],
       },
       {
         'title': 'Omega E-Commerce',
@@ -22,6 +26,10 @@ class ProjectsSection extends StatelessWidget {
             'A full-stack e-commerce solution featuring Firebase authentication, dynamic cart management, and real-time order tracking using Bloc architecture.',
         'tags': ['Flutter', 'Firebase', 'Bloc', 'Stripe'],
         'url': 'https://github.com/baseldev/flutter-ecommerce',
+        'screenshots': [
+          'https://placehold.co/600x400/png?text=Omega+Store+1',
+          'https://placehold.co/600x400/png?text=Omega+Store+2',
+        ],
       },
       {
         'title': 'Runner Game Engine',
@@ -29,6 +37,10 @@ class ProjectsSection extends StatelessWidget {
             'A 2D infinite runner game developed using the Flame engine. Features custom sprite animations, parallax backgrounds, and complex collision detection.',
         'tags': ['Flutter', 'Flame', 'Game Dev'],
         'url': 'https://github.com/baseldev/runner-game',
+        'screenshots': [
+          'https://placehold.co/600x400/png?text=Runner+Game+1',
+          'https://placehold.co/600x400/png?text=Runner+Game+2',
+        ],
       },
       {
         'title': 'Crypto Portfolio',
@@ -36,6 +48,10 @@ class ProjectsSection extends StatelessWidget {
             'Real-time cryptocurrency portfolio tracker integrating multiple REST and WebSocket APIs. Includes interactive charts and price alerts.',
         'tags': ['Flutter', 'WebSockets', 'REST APIs'],
         'url': 'https://github.com/baseldev/crypto-tracker',
+        'screenshots': [
+          'https://placehold.co/600x400/png?text=Crypto+1',
+          'https://placehold.co/600x400/png?text=Crypto+2',
+        ],
       },
     ];
 
@@ -67,6 +83,7 @@ class ProjectsSection extends StatelessWidget {
                   description: p['desc'] as String,
                   tags: p['tags'] as List<String>,
                   githubUrl: p['url'] as String,
+                  screenshots: (p['screenshots'] as List<String>?) ?? [],
                 ).animate().fadeIn(delay: (200 * index).ms).slideY(begin: 0.1);
               },
             );
