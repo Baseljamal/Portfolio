@@ -87,7 +87,7 @@ class HeroSection extends StatelessWidget {
             OutlinedButton(
               onPressed: () => launchUrl(
                 Uri.parse(
-                  'https://raw.githubusercontent.com/Baseljamal/Portfolio/main/assets/cv.pdf',
+                  'https://raw.githubusercontent.com/Baseljamal/Portfolio/main/assets/Basel%20Abdullah%20CV.pdf',
                 ),
               ),
               style:
