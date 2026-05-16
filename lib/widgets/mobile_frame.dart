@@ -24,12 +24,10 @@ class MobileFrame extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // Screen Content
           ClipRRect(
             borderRadius: BorderRadius.circular(24),
             child: child,
           ),
-          // Notch
           Align(
             alignment: Alignment.topCenter,
             child: Container(
