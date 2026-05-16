@@ -84,32 +84,27 @@ class HeroSection extends StatelessWidget {
           spacing: 20,
           runSpacing: 20,
           children: [
-            ElevatedButton(
+            OutlinedButton(
               onPressed: () => launchUrl(
                 Uri.parse(
-                  'https://raw.githubusercontent.com/Baseljamal/Portfolio/main/assets/resume.pdf',
+                  'https://raw.githubusercontent.com/Baseljamal/Portfolio/main/assets/cv.pdf',
                 ),
               ),
               style:
-                  ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: Colors.white,
+                  OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF7000FF),
                     padding: const EdgeInsets.symmetric(
                       horizontal: 32,
                       vertical: 20,
                     ),
+                    side: const BorderSide(color: Color(0xFF7000FF), width: 2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
-                      side: const BorderSide(
-                        color: Color(0xFF7000FF),
-                        width: 2,
-                      ),
                     ),
-                    elevation: 0,
                   ).copyWith(
                     backgroundColor: WidgetStateProperty.resolveWith((states) {
                       if (states.contains(WidgetState.hovered)) {
-                        return const Color(0xFF7000FF).withValues(alpha: 0.2);
+                        return const Color(0xFF7000FF).withValues(alpha: 0.1);
                       }
                       return Colors.transparent;
                     }),
@@ -126,20 +121,28 @@ class HeroSection extends StatelessWidget {
                 ],
               ),
             ),
-            ElevatedButton(
+            OutlinedButton(
               onPressed: () =>
                   launchUrl(Uri.parse('https://github.com/Baseljamal')),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).primaryColor,
-                foregroundColor: Colors.black,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 32,
-                  vertical: 20,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
+              style:
+                  OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF00F0FF),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 20,
+                    ),
+                    side: const BorderSide(color: Color(0xFF00F0FF), width: 2),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ).copyWith(
+                    backgroundColor: WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return const Color(0xFF00F0FF).withValues(alpha: 0.1);
+                      }
+                      return Colors.transparent;
+                    }),
+                  ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -156,18 +159,25 @@ class HeroSection extends StatelessWidget {
               onPressed: () => launchUrl(
                 Uri.parse('https://www.linkedin.com/in/basel-jamal-abdullah'),
               ),
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.blue[800],
-                side: BorderSide(color: Colors.grey.shade700),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 32,
-                  vertical: 20,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
+              style:
+                  OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF0A66C2),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 20,
+                    ),
+                    side: const BorderSide(color: Color(0xFF0A66C2), width: 2),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ).copyWith(
+                    backgroundColor: WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return const Color(0xFF0A66C2).withValues(alpha: 0.1);
+                      }
+                      return Colors.transparent;
+                    }),
+                  ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
