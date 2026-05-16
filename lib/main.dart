@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/portfolio_home.dart';
+import 'core/constants/projects_data.dart';
+import 'screens/project_details_screen.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -25,7 +27,40 @@ class PortfolioApp extends StatelessWidget {
           surface: Color(0xFF151B2B),
         ),
       ),
-      home: const PortfolioHome(),
+      initialRoute: '/',
+      onGenerateRoute: (settings) {
+        if (settings.name == '/') {
+          return MaterialPageRoute(
+            builder: (context) => const PortfolioHome(),
+            settings: settings,
+          );
+        }
+
+        // Handle /project/:id
+        if (settings.name!.startsWith('/project/')) {
+          final id = settings.name!.replaceFirst('/project/', '');
+          final project = projectsData.firstWhere(
+            (p) => p.id == id,
+            orElse: () => projectsData.first,
+          );
+
+          return MaterialPageRoute(
+            builder: (context) => ProjectDetailsScreen(
+              title: project.title,
+              description: project.description,
+              tags: project.tags,
+              githubUrl: project.githubUrl,
+              screenshots: project.screenshots,
+            ),
+            settings: settings,
+          );
+        }
+
+        return MaterialPageRoute(
+          builder: (context) => const PortfolioHome(),
+          settings: settings,
+        );
+      },
     );
   }
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import '../core/widgets/responsive_wrapper.dart';
-import '../widgets/nav_bar.dart';
-import '../widgets/hero_section.dart';
-import '../widgets/skills_section.dart';
-import '../widgets/projects_section.dart';
-import '../widgets/certificates_section.dart';
-import '../widgets/contact_section.dart';
-import '../widgets/footer.dart';
+import 'package:portfolio/core/widgets/responsive_wrapper.dart';
+import 'package:portfolio/widgets/certificates_section.dart';
+import 'package:portfolio/widgets/contact_section.dart';
+import 'package:portfolio/widgets/footer.dart';
+import 'package:portfolio/widgets/hero_section.dart';
+import 'package:portfolio/widgets/nav_bar.dart';
+import 'package:portfolio/widgets/projects_section.dart';
+import 'package:portfolio/widgets/skills_section.dart';
 
 class PortfolioHome extends StatelessWidget {
   const PortfolioHome({super.key});

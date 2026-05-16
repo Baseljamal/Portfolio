@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/screens/project_details_screen.dart';
 
 class ProjectCard extends StatelessWidget {
+  final String id;
   final String title;
   final String description;
   final List<String> tags;
@@ -11,6 +11,7 @@ class ProjectCard extends StatelessWidget {
 
   const ProjectCard({
     super.key,
+    required this.id,
     required this.title,
     required this.description,
     required this.tags,
@@ -31,17 +32,7 @@ class ProjectCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(24),
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ProjectDetailsScreen(
-                  title: title,
-                  description: description,
-                  tags: tags,
-                  githubUrl: githubUrl,
-                  screenshots: screenshots,
-                ),
-              ),
-            );
+            Navigator.pushNamed(context, '/project/$id');
           },
           hoverColor: Colors.white.withValues(alpha: 0.02),
           child: Padding(
