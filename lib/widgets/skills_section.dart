@@ -45,6 +45,11 @@ class SkillsSection extends StatelessWidget {
         'color': Colors.purpleAccent,
       },
       {
+        'name': 'AI & Machine Learning',
+        'icon': FontAwesomeIcons.robot,
+        'color': Colors.cyanAccent,
+      },
+      {
         'name': 'Communication',
         'icon': FontAwesomeIcons.comments,
         'color': Colors.tealAccent,

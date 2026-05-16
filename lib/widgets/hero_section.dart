@@ -85,6 +85,48 @@ class HeroSection extends StatelessWidget {
           runSpacing: 20,
           children: [
             ElevatedButton(
+              onPressed: () => launchUrl(
+                Uri.parse(
+                  'https://raw.githubusercontent.com/Baseljamal/Portfolio/main/assets/resume.pdf',
+                ),
+              ),
+              style:
+                  ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 20,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      side: const BorderSide(
+                        color: Color(0xFF7000FF),
+                        width: 2,
+                      ),
+                    ),
+                    elevation: 0,
+                  ).copyWith(
+                    backgroundColor: WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.hovered)) {
+                        return const Color(0xFF7000FF).withValues(alpha: 0.2);
+                      }
+                      return Colors.transparent;
+                    }),
+                  ),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.file_download_outlined, size: 20),
+                  SizedBox(width: 12),
+                  Text(
+                    'Download CV',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
               onPressed: () =>
                   launchUrl(Uri.parse('https://github.com/Baseljamal')),
               style: ElevatedButton.styleFrom(

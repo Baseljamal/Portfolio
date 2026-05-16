@@ -12,8 +12,8 @@ class ProjectsSection extends StatelessWidget {
       {
         'title': 'Omega Store',
         'desc':
-            'A full-stack e-commerce solution featuring Firebase authentication, dynamic cart management, and real-time order tracking using Bloc architecture.',
-        'tags': ['Flutter', 'Firebase', 'Bloc'],
+            'A high-performance e-commerce platform built with Clean Architecture and Bloc. Features secure Firebase authentication, real-time sync, and a responsive shopping experience.',
+        'tags': ['Flutter', 'Firebase', 'Bloc', 'Clean Architecture'],
         'url': 'https://github.com/Baseljamal/Omega_Store',
         'screenshots': [
           'assets/screenshots/omega_store_login.png',
@@ -25,8 +25,8 @@ class ProjectsSection extends StatelessWidget {
       {
         'title': 'Bookly',
         'desc':
-            'Bookly is an app that allows the user to view free e-books received from an API. It shows the book’s cover image, name, author(s) and enables the user to view the book in his browser, it also has a search service so the user can search for books of any category desired.',
-        'tags': ['Flutter', 'REST API', 'Bloc'],
+            'A polished book discovery app utilizing Google Books API. Features advanced search logic, custom UI animations, and seamless external URL integration for reading.',
+        'tags': ['Flutter', 'REST API', 'Bloc', 'Animations'],
         'url': 'https://github.com/Baseljamal/Bookly',
         'screenshots': [
           'assets/screenshots/bookly_home.png',
@@ -35,10 +35,22 @@ class ProjectsSection extends StatelessWidget {
         ],
       },
       {
+        'title': 'AI Classifier Module',
+        'desc':
+            'An edge-computing AI solution leveraging TensorFlow Lite for real-time image classification. Optimized for mobile performance with on-device model inference.',
+        'tags': ['Flutter', 'TensorFlow Lite', 'AI', 'Edge Computing'],
+        'url': 'https://github.com/Baseljamal/AI_Module',
+        'screenshots': [
+          'assets/screenshots/ai_module_home.png',
+          'assets/screenshots/ai_module_human.png',
+          'assets/screenshots/ai_module_robot.png',
+        ],
+      },
+      {
         'title': 'Notes App',
         'desc':
-            'An app where the user can create, edit and delete notes that are stored in a local database using Hive, with Cubit for state management. The user can add a title, content, and background color to their notes, and has the ability to search through notes.',
-        'tags': ['Flutter', 'Hive', 'Cubit'],
+            'A robust productivity tool for managing digital notes. Implements Hive for high-speed local persistence and Cubit for lightweight, predictable state management.',
+        'tags': ['Flutter', 'Hive', 'Cubit', 'Clean Code'],
         'url': 'https://github.com/Baseljamal/notes_app',
         'screenshots': [
           'assets/screenshots/notes_app_home.png',
@@ -51,8 +63,8 @@ class ProjectsSection extends StatelessWidget {
       {
         'title': 'Neon Runner',
         'desc':
-            'Neon Runner is a visually immersive 2D endless runner game built with Flutter and the Flame game engine, where the player has to avoid obstacles by jumping or double jumping. And it has local high-score calculation and dynamic difficulty scaling.',
-        'tags': ['Flutter', 'Flame'],
+            'A high-frame-rate 2D endless runner built with the Flame engine. Features custom collision physics, parallax scrolling, and dynamic difficulty scaling.',
+        'tags': ['Flutter', 'Flame', 'Game Dev', 'Physics'],
         'url': 'https://github.com/Baseljamal/Neon_Runner_Game',
         'screenshots': [
           'assets/screenshots/neon_runner_home.png',
