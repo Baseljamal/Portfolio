@@ -16,8 +16,10 @@ class ProjectsSection extends StatelessWidget {
         'tags': ['Flutter', 'Firebase', 'Bloc'],
         'url': 'https://github.com/Baseljamal/Omega_Store',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Omega+Store+1',
-          'https://placehold.co/600x400/png?text=Omega+Store+2',
+          'assets/screenshots/omega_store_login.png',
+          'assets/screenshots/omega_store_shop.png',
+          'assets/screenshots/omega_store_cart.png',
+          'assets/screenshots/omega_store_profile.png',
         ],
       },
       {
@@ -27,19 +29,23 @@ class ProjectsSection extends StatelessWidget {
         'tags': ['Flutter', 'REST API', 'Bloc'],
         'url': 'https://github.com/Baseljamal/Bookly',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Omega+Store+1',
-          'https://placehold.co/600x400/png?text=Omega+Store+2',
+          'assets/screenshots/bookly_home.png',
+          'assets/screenshots/bookly_book_details.png',
+          'assets/screenshots/bookly_search.png',
         ],
       },
       {
         'title': 'Notes App',
         'desc':
-            'An app where the user can create notes that are stored in a local database using Hive, with Cubit for state management. The user can add a title, content, and background color to their notes, and has the ability to edit each element or delete the note.',
+            'An app where the user can create, edit and delete notes that are stored in a local database using Hive, with Cubit for state management. The user can add a title, content, and background color to their notes, and has the ability to search through notes.',
         'tags': ['Flutter', 'Hive', 'Cubit'],
         'url': 'https://github.com/Baseljamal/notes_app',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Notes+App+1',
-          'https://placehold.co/600x400/png?text=Notes+App+2',
+          'assets/screenshots/notes_app_home.png',
+          'assets/screenshots/notes_app_add.png',
+          'assets/screenshots/notes_app_edit.png',
+          'assets/screenshots/notes_app_delete.png',
+          'assets/screenshots/notes_app_search.png',
         ],
       },
       {
@@ -49,8 +55,9 @@ class ProjectsSection extends StatelessWidget {
         'tags': ['Flutter', 'Flame'],
         'url': 'https://github.com/Baseljamal/Neon_Runner_Game',
         'screenshots': [
-          'https://placehold.co/600x400/png?text=Neon+Runner+1',
-          'https://placehold.co/600x400/png?text=Neon+Runner+2',
+          'assets/screenshots/neon_runner_home.png',
+          'assets/screenshots/neon_runner_gameplay.png',
+          'assets/screenshots/neon_runner_loss.png',
         ],
       },
     ];

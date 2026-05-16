@@ -151,7 +151,7 @@ class ProjectDetailsScreen extends StatelessWidget {
                             const SizedBox(width: 24),
                         itemBuilder: (context, index) {
                           return MobileFrame(
-                            child: Image.network(
+                            child: Image.asset(
                               screenshots[index],
                               fit: BoxFit.cover,
                             ),
